@@ -75,7 +75,6 @@ display: flex;
     height: inherit;
     margin: 0 auto;
     font-size: 12.5px;
-    padding: 0 15px;
     background-color: #fff;
     width: 100%;
     height: 48px;
@@ -90,4 +89,54 @@ div#root {
     border-radius: 20px;
     margin-bottom: 20px;
     padding: 15px;
+}
+
+
+.container {
+    max-width: 1076px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.navbarblock {
+    display: flex;
+}
+
+.postlist {
+    padding: 0 !important;
+    background: none !important;
+}
+
+.postlist > div > div {
+    background: #fff;
+    border-radius: 12px;
+    border: none;
+    margin-bottom: 15px !important;
+}
+
+.navbar__links > a {
+    background: #447bba;
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial;
+    border-radius: 8px;
+    padding: 7px 16px 8px;
+    margin: 0;
+    font-size: 12.5px;
+    width: 149px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.navbar__links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar__links > a + a {
+    margin-left: 10px;
 }

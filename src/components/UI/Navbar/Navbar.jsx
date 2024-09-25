@@ -12,7 +12,7 @@ const Navbar = (props) => {
         localStorage.removeItem('auth');
     }
     const [filter, setFilter]= useState({sort: '', query: ''})
-  return (
+  return isAuth ? (
     <div className="navbar">
         <div class="container">
             <div class="navbarblock">
@@ -34,6 +34,18 @@ const Navbar = (props) => {
                     <MyButton onClick={logout} className="logout">
                         Выйти
                     </MyButton>
+                </div>
+            </div>
+        </div>
+    </div>
+  ) : (
+    <div className="navbar notlogin">
+        <div class="container">
+            <div class="navbarblock">
+                <div class="navbarblock_logo">
+                    <a href="https://bobby76.github.io/react-app/">
+                        <img src={MyImage} alt="" />
+                    </a>
                 </div>
             </div>
         </div>

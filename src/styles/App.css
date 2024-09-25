@@ -391,4 +391,7 @@ body {
     margin-top: 13px;
 }textarea, input {
     font-family: 'Roboto';
+}.notlogin .navbarblock {
+    display: flex;
+    justify-content: center;
 }

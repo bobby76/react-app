@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import PostFilter from "../components/PostFilter";
+import PostFilter from "../../PostFilter";
 import { Link} from "react-router-dom";
 import MyButton from "../button/MyButton";
 import { AuthContext } from "../../../context";
@@ -16,7 +16,7 @@ const Navbar = (props) => {
         <div class="container">
             <div class="navbarblock">
                 <div class="navbarblock_logo">
-                    <img src="./react-app/src/components/img/logo.svg" alt="" />
+                    <img src="./static/img/logo.svg" alt="" />
                 </div>
                 <div class="navbarblock_search">
                     <PostFilter filter={filter} setFilter={setFilter}/>

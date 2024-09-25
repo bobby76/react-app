@@ -68,7 +68,7 @@ function Posts() {
            </MyModal>
            
             <hr style={{margin: '15px 0'}}></hr>
-            <PostFilter filter={filter} setFilter={setFilter}/>
+            <PostFilter filter={filter} setFilter={setFilter} style={{display:none}}/>
             <MySelect
                 value={limit}
                 onChange={value => setLimit(value)}

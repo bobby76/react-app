@@ -59,42 +59,74 @@ function Posts() {
     
     return ( 
         <div className="App">
-            <MyButton style={{marginTop: 30}} onClick={() => setModal(true)}>
-                Создать пост
-            </MyButton>
-            <PostForm create = {createPost}/>
-           <MyModal visible={modal} setVisible={setModal}>
-             <PostForm create = {createPost}/>
-           </MyModal>
-           
-            <hr style={{margin: '15px 0'}}></hr>
-            <PostFilter filter={filter} setFilter={setFilter} />
-            <MySelect
-                value={limit}
-                onChange={value => setLimit(value)}
-                defaultValue="Кол-во элементов на странице"
-                options={[
-                    {value: 5, name: '5'},
-                    {value: 10, name: '10'},
-                    {value: 25, name: '25'},
-                    {value: -1, name: 'Показать всё'},
-                ]}
-            />
-            {postError &&
-                 <h1>Произошла ошибка ${postError}</h1>}
-            <PostList remove={removePost} posts={sortedAndSearchedPosts} title="Посты про JS"/>
-            <div ref={lastElement} style={{height:20, background: 'red'}}/>
-            {isPostsLoading &&
-                <div style={{display: 'flex', justifyContent: 'center', marginTop: 50}}><Loader /></div>
-            }
-            <Pagination 
-                page={page} 
-                changePage = {changePage} 
-                totalPages={totalPages}
-            />
-           
-            
-             
+            <div className="container">
+                <div className="app_wrap">
+                    <div className="left_sidebar">
+                            <div class="left_sidebar_item">
+                                <div class="left_sidebar_title">Learn React</div>         
+                                <ul>
+                                    <li><a href="#">Quick Start</a></li>                    
+                                    <li><a href="#">Installation</a></li>                    
+                                    <li><a href="#">Describing the UI</a></li>                    
+                                    <li><a href="#">Adding Interactivity</a></li>                    
+                                    <li><a href="#">Managing State</a></li>                    
+                                    <li><a href="#">Escape Hatches</a></li>    
+                                </ul>
+                            </div>
+                            <div class="left_sidebar_item">
+                                <div class="left_sidebar_title">API Reference</div>         
+                                <ul>
+                                    <li><a href="#">React APIs</a></li>                    
+                                    <li><a href="#">React DOM APIs</a></li>    
+                                </ul>
+                            </div>
+                            <div class="left_sidebar_item">
+                                <div class="left_sidebar_title">Community</div>         
+                                <ul>
+                                    <li><a href="#">Code of Conduct</a></li>                    
+                                    <li><a href="#">Meet the Team</a></li>                    
+                                    <li><a href="#">Docs Contributors</a></li>                    
+                                    <li><a href="#">Acknowledgements</a></li>    
+                                </ul>
+                            </div>
+                    </div>
+                    <div className="content_wrap">
+                        <PostForm create = {createPost}/>
+                
+                        {/* <MyModal visible={modal} setVisible={setModal}>
+                                <PostForm create = {createPost}/>
+                            </MyModal>
+                            <PostFilter filter={filter} setFilter={setFilter} /> <MySelect
+                                    value={limit}
+                                    onChange={value => setLimit(value)}
+                                    defaultValue="Кол-во элементов на странице"
+                                    options={[
+                                        {value: 5, name: '5'},
+                                        {value: 10, name: '10'},
+                                        {value: 25, name: '25'},
+                                        {value: -1, name: 'Показать всё'},
+                                    ]}
+                                /> */}       
+                
+                    
+                
+                        {postError &&
+                            <h1>Произошла ошибка ${postError}</h1>}
+                        <PostList remove={removePost} posts={sortedAndSearchedPosts} title=""/>
+                        <div ref={lastElement} style={{height:20, background: 'red'}}/>
+                        {isPostsLoading &&
+                            <div style={{display: 'flex', justifyContent: 'center', marginTop: 50}}><Loader /></div>
+                        }
+                        <Pagination 
+                            page={page} 
+                            changePage = {changePage} 
+                            totalPages={totalPages}
+                        />
+                
+                    
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }

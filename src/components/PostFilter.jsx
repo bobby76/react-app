@@ -1,12 +1,13 @@
 import React from "react"
 import MySelect from "./UI/select/MySelect";
 import MyInput from "./UI/input/MyInput";
+import MySearch from "./UI/search/MySearch";
 
 
 const PostFilter = ({filter, setFilter}) => {
   return (
     <div>
-                <MyInput 
+                <MySearch
                     value={filter.query}
                     onChange={e => setFilter({...filter, query:e.target.value})}
                     placeholder="Поиск..."

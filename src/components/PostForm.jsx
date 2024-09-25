@@ -2,6 +2,7 @@ import React, { useState }  from "react";
 
 import MyButton from "./UI/button/MyButton";
 import MyInput from "./UI/input/MyInput";
+import MyTextarea from "./UI/input/MyTextarea";
 
 
 const PostForm = ({create}) => {
@@ -21,8 +22,8 @@ const PostForm = ({create}) => {
             {/* Управляемый компонент */ }
             <MyInput value={post.title} onChange={e=> setPost({...post, title: e.target.value})} type="text" placeholder="Название поста"/>
             {/* Неуправляемый компонент */ }
-            <MyInput value={post.body} onChange={e=> setPost({...post, body: e.target.value})} type="text" placeholder="Описание поста"/>
-            <MyButton onClick={addNewPost}>Создать пост</MyButton>
+            <MyTextarea value={post.body} onChange={e=> setPost({...post, body: e.target.value})} type="textarea" placeholder="Описание поста"/>
+            <MyButton onClick={addNewPost}>Опубликовать</MyButton>
         </form>
     )
 };

@@ -17,7 +17,9 @@ const Navbar = (props) => {
         <div class="container">
             <div class="navbarblock">
                 <div class="navbarblock_logo">
-                    <img src={MyImage} alt="" />
+                    <a href="https://bobby76.github.io/react-app/">
+                        <img src={MyImage} alt="" />
+                    </a>
                 </div>
                 <div class="navbar_nav">
                     <div class="navbarblock_search">

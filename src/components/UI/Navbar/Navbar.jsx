@@ -6,6 +6,8 @@ import { AuthContext } from "../../../context";
 import MyImage from "../../img/logo.svg";
 import MyProfile from "../../img/profile.svg";
 import { usePosts } from "../../../hooks/usePosts";
+import PostFilterSearch from "../../PostFilterSearch";
+
 
 const Navbar = (props) => {
     const {isAuth, setIsAuth} = useContext(AuthContext); 
@@ -15,12 +17,16 @@ const Navbar = (props) => {
         localStorage.removeItem('auth');
         setIsActive((s) => !s);
     };
-    const [filter, setFilter]= useState({sort: '', query: ''});
-    
+    const [posts, setPosts]  = useState( [ ])
+    const [filter, setFilter]= useState({sort: '', query: ''})
+    const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
+    const removePost = (post) => {
+        setPosts(posts.filter(p => p.id !== post.id))
+       }
+
+
     const [show, setShow] = useState(true);
     const handleClick = event => {
-        
-        /*setIsActive(current => !current);*/
         let element = document.getElementById("nav");
         element.classList.toggle('open');
         setIsActive((s) => !s);
@@ -37,7 +43,8 @@ const Navbar = (props) => {
                 </div>
                 <div className="navbar_nav">
                     <div className="navbarblock_search">
-                        <PostFilter filter={filter} setFilter={setFilter}/>
+                        {/*<PostFilter filter={filter} setFilter={setFilter}/>*/}
+                        <PostFilterSearch filter={filter} setFilter={setFilter} /> 
                     </div>
                     <div className="navbar__links">
                         <Link to="./about">О сайте</Link>

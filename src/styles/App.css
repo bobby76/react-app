@@ -474,6 +474,33 @@ ul.wp-block-list li {
 ul.wp-block-list li a {
     font-size: 14px;
     color: #000;
+}.post__content a {
+    display: none;
+}.navbarblock_search.content_block .inputblock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    min-width: 100%;
+}
+
+.navbarblock_search.content_block {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.navbarblock_search.content_block .inputblock input {
+    background: #fff;
+    height: 39px;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    border-radius: 0 12px 12px 0;
+}
+
+.navbarblock_search.content_block > div {
+    width: 100%;
+   
 }
 @media screen and  (min-width: 1076px){
     div#nav {

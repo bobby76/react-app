@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PostList from "../components/PostList";
 import PostForm from "../components/PostForm";
 import PostFilter from "../components/PostFilter";
@@ -16,37 +16,13 @@ import MySelect from "../components/UI/select/MySelect.jsx";
 import Navbar from "../components/UI/Navbar/Navbar.jsx";
 
 
-import { Link} from "react-router-dom";
-import { AuthContext } from "../context";
-import MyImage from "../components/img/logo.svg"
-import MyProfile from "../components/img/profile.svg";
-
-
 function Posts() {
-
-    const {isAuth, setIsAuth} = useContext(AuthContext); 
-    const [isActive, setIsActive] = useState(false);
-    const logout = () => {
-        setIsAuth(false);
-        localStorage.removeItem('auth');
-        setIsActive((s) => !s);
-    };
-    const [show, setShow] = useState(true);
-    const handleClick = event => {
-        let element = document.getElementById("nav");
-        element.classList.toggle('open');
-        setIsActive((s) => !s);
-      };
-
-
     const [posts, setPosts]  = useState( [ ])
-    const [filter, setFilter]= useState({sort: '', query: ''})
+  const [filter, setFilter]= useState({sort: '', query: ''})
     const [modal, setModal] = useState(false);
     const [totalPages, setTotalPages] = useState (0);
     const [limit, setLimit] = useState (10);
     const [page, setPage] = useState (1);
-
-
     const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
     const lastElement = useRef();
    
@@ -86,12 +62,6 @@ function Posts() {
     return ( 
        
         <div className="App">
-           
-                
-           
-
-
-           
             <div className="container">
                 <div className="app_wrap">
                     <div className="left_sidebar">
@@ -125,13 +95,11 @@ function Posts() {
                     </div> 
                     <div className="content_wrap">
                         <PostForm create = {createPost}/>
-                        <div className="navbarblock_search content_block">
-                            <PostFilterSearch filter={filter} setFilter={setFilter} />
-                        </div> 
+                
                         {/* <MyModal visible={modal} setVisible={setModal}>
                                 <PostForm create = {createPost}/>
                             </MyModal>*/}
-                       {/*} <PostFilterSearch filter={filter} setFilter={setFilter} /> */}
+                        <PostFilterSearch filter={filter} setFilter={setFilter} /> 
                             {/*<MySelect
                                     value={limit}
                                     onChange={value => setLimit(value)}

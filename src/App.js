@@ -4,6 +4,9 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import Navbar from "./components/UI/Navbar/Navbar.jsx";
 import AppRouter from "./components/AppRouter.jsx";
 import { AuthContext } from "./context/index.js";
+import PostFilterSearch from "./components/PostFilterSearch.jsx";
+import Posts from "./pages/Posts.jsx";
+
 
 function App() {
     const [isAuth, setIsAuth] = useState(false);

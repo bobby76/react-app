@@ -30,7 +30,7 @@ const AppRouter = () => {
     )}
     <Route
        path="*"
-       element={<Navigate to="./posts" replace />} />
+       element={<Navigate to="/react-app/posts" replace />} />
  
 
   
@@ -47,7 +47,7 @@ const AppRouter = () => {
      )}
       <Route
        path="*"
-       element={<Navigate to="/login/" replace />}
+       element={<Navigate to="/react-app/login/" replace />}
    />
     
   

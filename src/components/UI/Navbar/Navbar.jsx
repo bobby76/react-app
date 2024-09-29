@@ -47,8 +47,8 @@ const Navbar = (props) => {
                         <PostFilterSearch filter={filter} setFilter={setFilter} /> 
                     </div>
                     <div className="navbar__links">
-                        <Link to="./about">О сайте</Link>
-                        <Link to="./posts">Моя лента</Link>
+                        <Link to="/react-app/about">О сайте</Link>
+                        <Link to="/react-app/posts">Моя лента</Link>
                     </div>
                 </div>
                 <div className="navbar_login">
@@ -60,8 +60,8 @@ const Navbar = (props) => {
                     <img src={MyProfile} className={isActive ? 'open' : ''} alt="" onClick={handleClick} />
                     {console.log('isactive' + isActive)}
                     <div className="popup_menu" style={{ display: isActive ? "block" : "none" }}>
-                        <Link to="./about" onClick={handleClick}>О сайте</Link>
-                        <Link to="./posts"onClick={handleClick}>Моя лента</Link>
+                        <Link to="/react-app/about" onClick={handleClick}>О сайте</Link>
+                        <Link to="/react-app/posts"onClick={handleClick}>Моя лента</Link>
                         <MyButton onClick={logout} className="logout">
                             Выйти
                         </MyButton>

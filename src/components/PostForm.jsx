@@ -6,23 +6,22 @@ import MyTextarea from "./UI/input/MyTextarea";
 
 
 const PostForm = ({create}) => {
-    const [post, setPost] = useState({title:'', body:''})
-
+    const [post, setPost] = useState({title: { rendered :''}, excerpt: {rendered :''}})
     const addNewPost= (e) => {
         e.preventDefault()
         const newPost = {
-            ...post, id: 0
+            ...post
         }
         create(newPost)
-        setPost({title:'', body:''})
+        setPost({title: { rendered :''},excerpt: {rendered :''}})
 
     }
     return (
         <form>
             {/* Управляемый компонент */ }
-            <MyInput value={post.title} onChange={e=> setPost({...post, title: e.target.value})} type="text" placeholder="Название поста"/>
+            <MyInput value={post.title.rendered} onChange={e=> setPost({...post, title:  { rendered :e.target.value}})} type="text" placeholder="Название поста"/>
             {/* Неуправляемый компонент */ }
-            <MyTextarea value={post.body} onChange={e=> setPost({...post, body: e.target.value})} type="textarea" placeholder="Описание поста"/>
+            <MyTextarea value={post.excerpt.rendered} onChange={e=> setPost({...post, excerpt: { rendered :e.target.value}})} type="textarea" placeholder="Описание поста"/>
             <MyButton onClick={addNewPost}>Опубликовать</MyButton>
         </form>
     )

@@ -443,7 +443,7 @@ body {
 }
 
 .comment h5 {
-    text-transform: lowercase;
+  /*  text-transform: lowercase;*/
 }
 
 .comment:last-child {
@@ -452,8 +452,29 @@ body {
 }.page__wrapper {
     display: none;
 }
+.post_page_content img {
+    max-width: 100%;
+    height: initial;
+}
 
+.post_page_content p {
+    margin-bottom: 20px;
+    font-size: 14px !important;
+    line-height: 20px;
+}
 
+.post_page_block h1 {
+    font-size: 18px;
+    line-height: 22px;
+}
+ul.wp-block-list li {
+    margin-left: 20px;
+}
+
+ul.wp-block-list li a {
+    font-size: 14px;
+    color: #000;
+}
 @media screen and  (min-width: 1076px){
     div#nav {
         display: none;

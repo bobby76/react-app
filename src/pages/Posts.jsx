@@ -12,11 +12,12 @@ import { getPageCount } from "../components/utils/pages.jsx";
 import Pagination from "../components/UI/pagination/Pagination.jsx";
 import { useObserver } from "../hooks/useObserver.js";
 import MySelect from "../components/UI/select/MySelect.jsx";
+import Navbar from "../components/UI/Navbar/Navbar.jsx";
 
 
 function Posts() {
     const [posts, setPosts]  = useState( [ ])
-    const [filter, setFilter]= useState({sort: '', query: ''})
+  const [filter, setFilter]= useState({sort: '', query: ''})
     const [modal, setModal] = useState(false);
     const [totalPages, setTotalPages] = useState (0);
     const [limit, setLimit] = useState (10);
@@ -43,7 +44,7 @@ function Posts() {
 
 
    const createPost= (newPost) => {
-    setPosts([...posts, newPost])
+    setPosts([newPost, ...posts])
     setModal(false)
    }
 
@@ -95,8 +96,9 @@ function Posts() {
                 
                         {/* <MyModal visible={modal} setVisible={setModal}>
                                 <PostForm create = {createPost}/>
-                            </MyModal>
-                            <PostFilter filter={filter} setFilter={setFilter} /> <MySelect
+                            </MyModal>*/}
+                            <PostFilter filter={filter} setFilter={setFilter} /> 
+                            {/*<MySelect
                                     value={limit}
                                     onChange={value => setLimit(value)}
                                     defaultValue="Кол-во элементов на странице"
@@ -106,7 +108,7 @@ function Posts() {
                                         {value: 25, name: '25'},
                                         {value: -1, name: 'Показать всё'},
                                     ]}
-                                /> */}       
+                                />   */}  
                 
                     
                 

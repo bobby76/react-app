@@ -8,11 +8,11 @@ const PostItem = (props) => {
     return (
         <div className="post">
             <div className="post__content">
-                <strong onClick={() => router(`/posts/${props.post.id}`)}>{props.post.id}. {props.post.title}</strong>
+                <strong onClick={() => router(`/posts/${props.post.id}`)}>{props.number}. <span dangerouslySetInnerHTML={{__html: props.post.title.rendered}}/></strong>
                 <div>
-                    {props.post.body}
+                    <div dangerouslySetInnerHTML={{__html: props.post.excerpt.rendered}}/>
                 </div>
-                <div class="readmore_button"  onClick={() => router(`/posts/${props.post.id}`)}>
+                <div className="readmore_button"  onClick={() => router(`/posts/${props.post.id}`)}>
                     Read more
                 </div>
             </div>

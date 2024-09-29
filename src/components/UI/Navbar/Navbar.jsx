@@ -5,6 +5,7 @@ import MyButton from "../button/MyButton";
 import { AuthContext } from "../../../context";
 import MyImage from "../../img/logo.svg";
 import MyProfile from "../../img/profile.svg";
+import { usePosts } from "../../../hooks/usePosts";
 
 const Navbar = (props) => {
     const {isAuth, setIsAuth} = useContext(AuthContext); 
@@ -13,9 +14,9 @@ const Navbar = (props) => {
         setIsAuth(false);
         localStorage.removeItem('auth');
         setIsActive((s) => !s);
-    }
+    };
     const [filter, setFilter]= useState({sort: '', query: ''});
-   
+    
     const [show, setShow] = useState(true);
     const handleClick = event => {
         

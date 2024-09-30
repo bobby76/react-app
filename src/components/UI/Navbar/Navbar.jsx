@@ -47,8 +47,8 @@ const Navbar = (props) => {
                         <PostFilterSearch filter={filter} setFilter={setFilter} /> 
                     </div>
                     <div className="navbar__links">
-                        <Link to="/react-app/about">О сайте</Link>
-                        <Link to="/react-app/posts">Моя лента</Link>
+                        <Link to="/about">О сайте</Link>
+                        <Link to="/posts">Моя лента</Link>
                     </div>
                 </div>
                 <div className="navbar_login">

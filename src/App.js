@@ -23,7 +23,7 @@ function App() {
             setIsAuth,
             isLoading
         }}>
-            <BrowserRouter>
+            <BrowserRouter basename="/react-app" >
                 <Navbar />
                 <AppRouter />
             </BrowserRouter>

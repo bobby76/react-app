@@ -24,7 +24,7 @@ function App() {
             setIsAuth,
             isLoading
         }}>
-            <HashRouter basename="/react-app" >
+            <HashRouter >
                 <Navbar />
                 <AppRouter />
             </HashRouter>

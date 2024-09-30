@@ -6,6 +6,7 @@ import AppRouter from "./components/AppRouter.jsx";
 import { AuthContext } from "./context/index.js";
 import PostFilterSearch from "./components/PostFilterSearch.jsx";
 import Posts from "./pages/Posts.jsx";
+import { HashRouter } from 'react-router-dom';
 
 
 function App() {
@@ -23,10 +24,10 @@ function App() {
             setIsAuth,
             isLoading
         }}>
-            <BrowserRouter basename="/react-app" >
+            <HashRouter basename="/react-app" >
                 <Navbar />
                 <AppRouter />
-            </BrowserRouter>
+            </HashRouter>
         </AuthContext.Provider>
     )
 }
